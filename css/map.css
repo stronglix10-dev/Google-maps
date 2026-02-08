@@ -1,0 +1,188 @@
+/* =====================
+   BASE (MOBILE FIRST)
+===================== */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#contacto {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  max-width: 100%;
+  margin: 0 auto 25px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0f766e;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 100%;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card,
+.step {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #0f766e;
+}
+
+.steps {
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  background: #0d9488;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.cta {
+  background: #0f766e;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+footer {
+  background-color: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 0.85rem;
+}
+
+/* =====================
+   TABLET (≥768px)
+===================== */
+@media (min-width: 768px) {
+  header {
+    padding: 70px 20px;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    max-width: 650px;
+  }
+
+  section {
+    max-width: 1100px;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* =====================
+   DESKTOP (≥1024px)
+===================== */
+@media (min-width: 1024px) {
+  header h1 {
+    font-size: 2.8rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .btn {
+    padding: 16px 30px;
+  }
+
+  .cta {
+    padding: 80px 20px;
+  }
+}
